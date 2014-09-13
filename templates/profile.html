@@ -117,8 +117,8 @@ $def with (template)
 
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
+    updateHuman(response);
   });
-  updateHuman();
 
   };
 
@@ -142,8 +142,9 @@ $def with (template)
     });
   }
 
-  function updateHuman() {
-    FB.api('/me', function(response) {
+  function updateHuman(response) {
+    if (response.status === 'connected') {
+      FB.api('/me', function(response) {
       console.log(response);
       document.getElementById('your-name').innerHTML = response;
     });
@@ -163,6 +164,15 @@ $def with (template)
       }
     }
 );
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      location.href = "index.php"
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      location.href = "index.php";
+    }
+    
   }
 
   function logoutFB() {
