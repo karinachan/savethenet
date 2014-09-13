@@ -10,13 +10,15 @@ from pymongo import MongoClient
 
 # Connection to Mongo DB
 
+
+
 post = {"author": "Claire",
          "text": "Pymongo insertion #2!",
          "tags": ["pymongo", "test", "number 2"],
          "date": datetime.datetime.utcnow()}
 
 urls=(
-  '/', 'login',
+  '/', 'index',
   '/u', 'profile',
   '/bye','logout'
 )
@@ -33,7 +35,10 @@ class logout:
     def GET(self):
       print os.getcwd()
       return render.logout("Claire")
-
+class index: 
+    def GET(self):
+      print os.getcwd()
+      return render.index("YAY")
 try:
     client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
     print "Connected successfully!!!"
