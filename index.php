@@ -90,7 +90,7 @@
 
 <h1>Save the Net</h1>
 <img src="images/loadingcat.gif" alt-text="Loading Cat">
-<h3>Stopping Net Neutrality, Saving the Cats of the Internet</h3>
+<h3>Saving the Cats of the Internet</h3>
 
 
 <!--
