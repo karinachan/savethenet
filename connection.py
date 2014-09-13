@@ -64,7 +64,7 @@ if (numdocs == 0):
     posts=db.posts #what is this??
     post_id=posts.insert(post)
     print post_id
-    numdocs++
+    numdocs += 1
   except pymongo.errors.ConnectionFailure, e:
     print "Could not connect to MongoDB: %s" % e
 
