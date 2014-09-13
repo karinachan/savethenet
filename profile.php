@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <div id="container">
@@ -22,7 +22,7 @@
           <a class="navbar-brand" href="#">Save the Net</a>
         </div>
         <div class="collapse navbar-collapse" id="navnav">
-          <button type="button" class="btn btn-default navbar-btn" onclick="LogoutFacebook()">Log Out</button>
+          <span id="fbLogout" onclick="fbLogout()"><a class="fb_button fb_button_medium btn btn-default navbar-btn"><span class="fb_button_text">Logout</span></a></span>
         </div>
       </div>
     </nav>
@@ -63,39 +63,15 @@
 	    version    : 'v2.1' // use version 2.1
 	  });
 
-	function LogoutFacebook() {    
-		FB.logout(function (response) {
-    	location.href = "logout.php"
-	});   }
-
-	// function statusChangeCallback(response) {
- //    console.log('statusChangeCallback');
- //    console.log(response);
- //    // The response object is returned with a status field that lets the
- //    // app know the current login status of the person.
- //    // Full docs on the response object can be found in the documentation
- //    // for FB.getLoginStatus().
- //    if (response.status === 'connected') {
- //      // Logged into your app and Facebook.
- //      //testAPI();
- //      location.href = "profile.php"
- //    } else if (response.status === 'not_authorized') {
- //      // The person is logged into Facebook, but not your app.
- //      document.getElementById('status').innerHTML = 'Please log ' +
- //        'into this app.';
- //    } else {
- //      // The person is not logged into Facebook, so we're not sure if
- //      // they are logged into this app or not.
- //      document.getElementById('status').innerHTML = 'Please log ' +
- //        'into Facebook.';
- //    }
- //  }
-
- //  function checkLoginState() {
- //    FB.getLoginStatus(function(response) {
- //      statusChangeCallback(response);
- //    });
- //  }
+	<script>
+function fbLogout() {
+        FB.logout(function (response) {
+            //Do what ever you want here when logged out like reloading the page
+            window.location.reload();
+        });
+    }
 </script>
+
+
 </body>
 </html>
