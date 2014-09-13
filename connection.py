@@ -45,14 +45,10 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-print(collection)
-
 facebookuserid=""; #to be populated and checked if it exists in mongodb already
 
-if(facebookuserid in collection)
- #no need to create;
-else:
- post= {"user": facebookuserid,#facebook userid
+if(facebookuserid not in collection)
+  post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
   "completed":[],
   "incomplete":[{"description": "Raise Awareness", "pval": 10, "name":"challenge1", "status":"incomplete","imgname":"cat2.png"},
