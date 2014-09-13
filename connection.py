@@ -50,7 +50,8 @@ except pymongo.errors.ConnectionFailure, e:
 
 
 if __name__ == "__main__":
+  web.run(urls, globals(), web.reloader)
     #app = web.application(urls, globals())
-    wsgi_app = web.application(urls, globals()).wsgifunc()
-    wsgi_app.run()
+  #  wsgi_app = web.application(urls, globals()).wsgifunc()
+  #  wsgi_app.run()
     #app.run()
