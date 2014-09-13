@@ -106,15 +106,21 @@ render = web.template.render('templates')
 
 class profile:
     def GET(self):
+      numdocs += 1
+      print ("profile self")
       print os.getcwd()
       return render.profile("YOU! (from the web.py)")
 
 class logout:
     def GET(self):
+      numdocs += 1
+      print ("logout self")
       print os.getcwd()
       return render.logout("Claire")
 class index:
     def GET(self):
+      numdocs += 1
+      print ("index self")
       print os.getcwd()
       return render.index("YAY")
 
