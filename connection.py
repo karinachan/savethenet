@@ -45,7 +45,7 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-facebookuserid="blah2"; #to be populated and checked if it exists in mongodb already
+facebookuserid="blah22"; #to be populated and checked if it exists in mongodb already
 
 if db.collection.find({"user":facebookuserid}) == None:
   post= {"user": facebookuserid,#facebook userid
