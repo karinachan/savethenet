@@ -6,34 +6,7 @@
 </head>
 <body>
 
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '692319020856556',
-        xfbml      : true,
-        version    : 'v2.1'
-      });
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-54749960-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
-  <script>
+<script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -68,14 +41,14 @@
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '692319020856556',
-    cookie     : true,  // enable cookies to allow the server to access
+    appId      : '{your-app-id}',
+    cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.1' // use version 2.1
   });
 
-  // Now that we've initialized the JavaScript SDK, we call
+  // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -114,9 +87,11 @@
   }
 </script>
 
+
 <h1>Save the Net</h1>
 <img src="images/loadingcat.gif" alt-text="Loading Cat">
 <h3>Stopping Net Neutrality, Saving the Cats of the Internet</h3>
+
 
 <!--
   Below we include the Login Button social plugin. This button uses
