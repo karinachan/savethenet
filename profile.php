@@ -73,6 +73,7 @@
        }(document, 'script', 'facebook-jssdk'));
 
       function logoutFB() {
+      	console.log(FB.getAuthResponse());
       	FB.logout(function(response) {
         // Person is now logged out
     });
