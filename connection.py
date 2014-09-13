@@ -45,10 +45,12 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-found= false
+found= False
 print found
 facebookuserid="crazy" #to be populated and checked if it exists in mongodb already
 print facebookuserid
+
+print "db collections" + db.collections.find()
 #
 #
 # if (!found):
