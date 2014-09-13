@@ -1,1 +1,1 @@
-web: gunicorn connection.wsgi
+web: python connection.py run_gunicorn
