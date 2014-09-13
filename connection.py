@@ -16,6 +16,7 @@ post = {"author": "Claire",
          "date": datetime.datetime.utcnow()}
 
 urls=(
+  '/', 'login',
   '/u', 'profile',
   '/bye','logout'
 )
