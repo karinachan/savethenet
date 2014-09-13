@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import pymongo
 import sys, os
+
 sys.path.append(os.getcwd())
 import web
 import datetime
@@ -17,15 +18,6 @@ post = {"author": "Claire",
 urls=(
   '/', 'profile',
   '/logout','logout'
-)
-
-fastcgi.server = ( "/connection.py" =>
-((
-   "socket" => "/tmp/fastcgi.socket",
-   "bin-path" => "/path/to/root/connection.py",
-   "max-procs" => 1,
-   "check-local" => "disable"
-))
 )
 
 
