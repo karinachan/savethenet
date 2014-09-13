@@ -22,7 +22,7 @@
           <a class="navbar-brand" href="#">Save the Net</a>
         </div>
         <div class="collapse navbar-collapse" id="navnav">
-          <button type="button" class="btn btn-default navbar-btn" onclick="FB.logout()">Log Out</button>
+          <button type="button" class="btn btn-default navbar-btn" onclick="LogoutFacebook()">Log Out</button>
         </div>
       </div>
     </nav>
@@ -54,9 +54,48 @@
 </div>
 
 <script type="text/javascript">
-	FB.logout(function(response) {
-   	     // Person is now logged out
-    	});
+	window.fbAsyncInit = function() {
+	  FB.init({
+	    appId      : '692319020856556',
+	    cookie     : true,  // enable cookies to allow the server to access 
+	                        // the session
+	    xfbml      : true,  // parse social plugins on this page
+	    version    : 'v2.1' // use version 2.1
+	  });
+
+	function LogoutFacebook() {    
+		FB.logout(function (response) {
+    	location.href = "logout.php"
+	});   }
+
+	// function statusChangeCallback(response) {
+ //    console.log('statusChangeCallback');
+ //    console.log(response);
+ //    // The response object is returned with a status field that lets the
+ //    // app know the current login status of the person.
+ //    // Full docs on the response object can be found in the documentation
+ //    // for FB.getLoginStatus().
+ //    if (response.status === 'connected') {
+ //      // Logged into your app and Facebook.
+ //      //testAPI();
+ //      location.href = "profile.php"
+ //    } else if (response.status === 'not_authorized') {
+ //      // The person is logged into Facebook, but not your app.
+ //      document.getElementById('status').innerHTML = 'Please log ' +
+ //        'into this app.';
+ //    } else {
+ //      // The person is not logged into Facebook, so we're not sure if
+ //      // they are logged into this app or not.
+ //      document.getElementById('status').innerHTML = 'Please log ' +
+ //        'into Facebook.';
+ //    }
+ //  }
+
+ //  function checkLoginState() {
+ //    FB.getLoginStatus(function(response) {
+ //      statusChangeCallback(response);
+ //    });
+ //  }
 </script>
 </body>
 </html>
