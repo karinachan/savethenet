@@ -47,7 +47,7 @@ except pymongo.errors.ConnectionFailure, e:
 
 facebookuserid=""; #to be populated and checked if it exists in mongodb already
 
-if facebookuserid not in collection:
+if facebookuserid not in db.collection.find({user:facebookuserid}):
   post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
   "completed":[],
