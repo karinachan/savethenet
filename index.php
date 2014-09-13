@@ -3,10 +3,11 @@
 <head>
   <title>Save the Net</title>
   <meta charset="UTF-8">
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
   <script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
