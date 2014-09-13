@@ -74,6 +74,8 @@
 
       function logoutFB() {
       	console.log(FB.getAuthResponse());
+      	$access_token = $facebook->getAccessToken();
+      	console.log($access_token);
       	FB.logout(function(response) {
         // Person is now logged out
     });
