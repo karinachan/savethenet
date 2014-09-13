@@ -1,5 +1,6 @@
 import pymongo
-import os
+import sys, os
+sys.path.append(os.getcwd())
 import web
 import datetime
 from pymongo import MongoClient
