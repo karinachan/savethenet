@@ -1,4 +1,5 @@
 import pymongo
+import os
 import web
 import datetime
 from pymongo import MongoClient
@@ -18,12 +19,16 @@ urls=(
 
 class profile:
     def GET(self):
-      render = web.template.render('templates/profile')
+      print os.getcwd()
+      os.chdir('templates')
+      render = web.template.render('./templates/profile.html')
       return render.profile("YOU! (from the web.py)")
 
 class bye:
     def GET(self):
-      render = web.template.render('templates/logout')
+      print os.getcwd()
+      os.chdir('templates')
+      render = web.template.render('./templates/logout.html')
       return render.logout("Claire")
 
 try:
