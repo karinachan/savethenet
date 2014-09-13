@@ -45,6 +45,7 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
+print(collection)
 
 facebookuserid=""; #to be populated and checked if it exists in mongodb already
 
