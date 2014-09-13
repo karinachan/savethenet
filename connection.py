@@ -23,19 +23,37 @@ from pymongo import MongoClient
 #         "date": datetime.datetime.utcnow()}
 
 
-post= {"user": "karinachan",#facebook userid
- "pts": 0, #sum of your completed challenges
- "completed":[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
- "incomplete":[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
- {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
- "passed":[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
+# post= {"user": "karinachan",#facebook userid
+#  "pts": 0, #sum of your completed challenges
+#  "completed":[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
+#  "incomplete":[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+#  {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
+#  "passed":[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
 
-post1= {"user": "claire",#facebook userid
- "pts": 0, #sum of your completed challenges
- "completed":[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
- "incomplete":[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
- {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
- "passed":[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
+# post1= {"user": "claire",#facebook userid
+#  "pts": 0, #sum of your completed challenges
+#  "completed":[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
+#  "incomplete":[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+#  {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
+#  "passed":[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
+
+facebookuserid=""; #to be populated and checked if it exists in mongodb already
+
+if(facebookuserid in mongodb.collection.thing)
+ no need to create;
+else:
+ post= {"user": facebookuserid,#facebook userid
+  "pts": 0, #sum of your completed challenges
+  "completed":[],
+  "incomplete":[{"description": "Raise Awareness", "pval": 10, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+  {"description": "Educate Yourself", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"},
+  {"description": "Raise Awareness", "pval": 10, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+  {"description": "Tweet Out", "pval": 10, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+  {"description": "Write to the FCC", "pval": 15, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+  {"description": "Change Profile Photo", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+  {"description": "Change Cover Photo", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"}],
+  "passed":[]}
+
 urls=(
   '/', 'index',
   '/u', 'profile',
