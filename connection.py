@@ -11,11 +11,13 @@ from pymongo import MongoClient
 # Connection to Mongo DB
 
 
+post= {"description": "Test challenge", "ptvalue": 5, "image":"cat.gif"}
 
-post = {"author": "Claire",
-         "text": "Pymongo insertion #2!",
-         "tags": ["pymongo", "test", "number 2"],
-         "date": datetime.datetime.utcnow()}
+
+post1 = {"name": "Claire",
+        "ptaccum": 10,
+        "openchallenges": ["thing", "test", "number 2"], #assuming this will be linked to another collection later
+        "date": datetime.datetime.utcnow()}
 
 urls=(
   '/', 'index',
@@ -35,7 +37,7 @@ class logout:
     def GET(self):
       print os.getcwd()
       return render.logout("Claire")
-class index: 
+class index:
     def GET(self):
       print os.getcwd()
       return render.index("YAY")
@@ -45,9 +47,11 @@ try:
     db=client['savethedata']
     collection=db['savethedata1']
     print "collection established"
-    posts=db.posts
+    posts=db.posts #what is this??
     post_id=posts.insert(post)
     print post_id
+    post_id2=posts.insert(post1)
+    print post_id2
 
 except pymongo.errors.ConnectionFailure, e:
    print "Could not connect to MongoDB: %s" % e
