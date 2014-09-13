@@ -1,0 +1,25 @@
+<!-- Login Page for Save the Net created by Karina Chan and Claire Schlenker for PennappsX, 12 Sept 2014 -->
+<html>
+<head>
+	<title>Save the Net</title>
+</head>
+<body>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '692319020856556',
+	      xfbml      : true,
+	      version    : 'v2.1'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+</body>
+</html>
