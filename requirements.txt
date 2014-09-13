@@ -1,6 +1,0 @@
--e git://github.com/django/django.git@ae3fe6ccbb925236aa3cfc9173d2d307634fded4#egg=Django-master
-gunicorn==19.1.1
-pymongo==2.7
-virtualenv==1.11.4
-web.py==0.37
-wsgiref==0.1.2
