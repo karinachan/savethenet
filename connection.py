@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pymongo
 import sys, os
 sys.path.append(os.getcwd())
@@ -17,6 +18,16 @@ urls=(
   '/', 'profile',
   '/logout','logout'
 )
+
+fastcgi.server = ( "/connection.py" =>
+((
+   "socket" => "/tmp/fastcgi.socket",
+   "bin-path" => "/path/to/root/connection.py",
+   "max-procs" => 1,
+   "check-local" => "disable"
+))
+)
+
 
 render = web.template.render('templates')
 
@@ -42,6 +53,8 @@ try:
 
 except pymongo.errors.ConnectionFailure, e:
    print "Could not connect to MongoDB: %s" % e
+
+
 
 
 if __name__ == "__main__":

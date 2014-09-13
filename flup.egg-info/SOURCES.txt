@@ -1,0 +1,6 @@
+flup.egg-info/PKG-INFO
+flup.egg-info/SOURCES.txt
+flup.egg-info/dependency_links.txt
+flup.egg-info/entry_points.txt
+flup.egg-info/top_level.txt
+flup.egg-info/zip-safe
