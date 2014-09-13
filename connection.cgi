@@ -2,7 +2,7 @@
 import pymongo
 import sys, os
 
-sys.path.append(os.getcwd())         # XXX might need to be removed
+sys.path.append(os.getcwd())
 import web
 import datetime
 from pymongo import MongoClient
@@ -47,15 +47,14 @@ except pymongo.errors.ConnectionFailure, e:
    print "Could not connect to MongoDB: %s" % e
 
 
-app = web.application(urls, globals())
+
 
 if __name__ == "__main__":
   print "reached bottom"
   print urls
   print globals()
-  # print web.reloader
-  # web.run(urls, globals(), web.reloader)
-  app.run()
+  print web.reloader
+  web.run(urls, globals(), web.reloader)
     #app = web.application(urls, globals())
   #  wsgi_app = web.application(urls, globals()).wsgifunc()
   #  wsgi_app.run()

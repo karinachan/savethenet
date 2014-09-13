@@ -1,11 +1,11 @@
 $def with (template)
 <html>
 <head>
-  <title>Save the Net--Your Profile $template</title>
-  <script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <title>Save the Net--Your Dashboard $template</title>
+  <script type="text/javascript" src="static/bootstrap/js/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="static/bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="profile.css">
 </head>
@@ -111,7 +111,7 @@ $def with (template)
       if (response && !response.error) {
         /* handle the result */
         console.log(response);
-        //document.getElementById('prof-photo').src = "https://graph.facebook.com/USER_ID/picture"; 
+        //document.getElementById('prof-photo').src = "https://graph.facebook.com/USER_ID/picture";
       }
     }
 );
@@ -270,7 +270,7 @@ $def with (template)
           data-count="none">
         Tweet
         </a>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
