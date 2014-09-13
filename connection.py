@@ -50,7 +50,7 @@ print found
 facebookuserid="crazy" #to be populated and checked if it exists in mongodb already
 print facebookuserid
 
-print "db collections" + db.collections.find()
+print db.collection.find().forEach(function(myDoc) { print( "user: " + myDoc.name ); });
 #
 #
 # if (!found):
