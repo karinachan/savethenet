@@ -10,14 +10,29 @@ from pymongo import MongoClient
 
 # Connection to Mongo DB
 
+#
+# post= {"type":"challenge","description": "Test challenge", "ptvalue": 5, "image":"cat.gif"}
+#
+#
+# post1 = {"name": "Claire",
+#         "ptaccum": 10,
+#         "openchallenges": ["thing", "test", "number 2"], #assuming this will be linked to another collection later
+#         "date": datetime.datetime.utcnow()}
 
-post= {"description": "Test challenge", "ptvalue": 5, "image":"cat.gif"}
+post= {"user": "karinachan",#facebook userid
+ "pts": 0, #sum of your completed challenges
+ completed:[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
+ incomplete:[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+ {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
+ passed:[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
 
+post1= {"user": "claire",#facebook userid
+ "pts": 0, #sum of your completed challenges
+ completed:[{"description": "change your profile picture", "pval": 1, "name":"challenge 0", "status":"complete", "imgname":"cat.png"}],
+ incomplete:[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"not complete","imgname":"cat2.png"},
+ {"description": "call five people", "pval": 5, "name":"challenge2","status":"not complete","imgname":"cat3.png"}],
+ passed:[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
 
-post1 = {"name": "Claire",
-        "ptaccum": 10,
-        "openchallenges": ["thing", "test", "number 2"], #assuming this will be linked to another collection later
-        "date": datetime.datetime.utcnow()}
 
 urls=(
   '/', 'index',
@@ -37,6 +52,7 @@ class logout:
     def GET(self):
       print os.getcwd()
       return render.logout("Claire")
+
 class index:
     def GET(self):
       print os.getcwd()
