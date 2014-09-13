@@ -1,1 +1,1 @@
-web: python connection.py run_gunicorn
+web:python connection.py ENV["PORT"]
