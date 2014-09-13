@@ -11,13 +11,16 @@ from pymongo import MongoClient
 # Connection to Mongo DB
 
 
-post= {"description": "Test challenge", "ptvalue": 5, "image":"cat.gif"}
+# chal1= {"type": "challenge", "description": "Raise Awareness", "ptvalue": 5, "image": "cat.gif"}
+# chal2= {"type": "challenge", "description": "Educate Yourself", "ptvalue": 5, "image": "cat.gif"}
+# chal3= {"type": "challenge", "description": "Tweet Out", "ptvalue": 5, "image": "cat.gif"}
+# chal4= {"type": "challenge", "description": "Write to the FCC", "ptvalue": 5, "image": "cat.gif"}
 
 
-post1 = {"name": "Claire",
-        "ptaccum": 10,
-        "openchallenges": ["thing", "test", "number 2"], #assuming this will be linked to another collection later
-        "date": datetime.datetime.utcnow()}
+# post1 = {"name": "Claire",
+#         "ptaccum": 10,
+#         "openchallenges": ["thing", "test", "number 2"], #assuming this will be linked to another collection later
+#         "date": datetime.datetime.utcnow()}
 
 urls=(
   '/', 'index',
