@@ -36,6 +36,15 @@ from pymongo import MongoClient
 #  "incomplete":[{"description": "call five people", "pval": 5, "name":"challenge1", "status":"incomplete","imgname":"cat2.png"},
 #  {"description": "call five people", "pval": 5, "name":"challenge2","status":"incomplete","imgname":"cat3.png"}],
 #  "passed":[{"description":"pour ice bucket water on head and post vid on facebook","pval":10, "name":"challenge3", "status":"passed"}]}
+try:
+  client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
+  print "Connected successfully!!!"
+  db=client['savethedata']
+  collection=db['savethedata1']
+  print "collection established"
+except pymongo.errors.ConnectionFailure, e:
+  print "Could not connect to MongoDB: %s" % e
+
 
 facebookuserid=""; #to be populated and checked if it exists in mongodb already
 
@@ -77,11 +86,7 @@ class index:
       print os.getcwd()
       return render.index("YAY")
 try:
-    client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
-    print "Connected successfully!!!"
-    db=client['savethedata']
-    collection=db['savethedata1']
-    print "collection established"
+    
     posts=db.posts #what is this??
     post_id=posts.insert(post)
     print post_id
