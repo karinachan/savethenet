@@ -27,7 +27,6 @@ class profile:
 class logout:
     def GET(self):
       print os.getcwd()
-      os.chdir('templates')
       return render.logout("Claire")
 
 try:
