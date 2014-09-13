@@ -47,7 +47,7 @@ except pymongo.errors.ConnectionFailure, e:
 
 facebookuserid="b" #to be populated and checked if it exists in mongodb already
 founddocs = {}
-founddocs= db.collection.find({"user", facebookuserid})
+founddocs= db.collection.find({"user":facebookuserid})
 numdocs= len(founddocs)
 if (numdocs == 0):
   post= {"user": facebookuserid,#facebook userid
