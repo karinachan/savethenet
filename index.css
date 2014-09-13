@@ -12,11 +12,3 @@
 #loading-cat {
 	width: 100px;
 }
-
-html { 
-  background: url(images/binary.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
