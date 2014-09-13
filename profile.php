@@ -4,6 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <div id="container">
@@ -21,7 +22,7 @@
           <a class="navbar-brand" href="#">Save the Net</a>
         </div>
         <div class="collapse navbar-collapse" id="navnav">
-          <button type="button" class="btn btn-default navbar-btn">Log Out</button>
+          <button type="button" class="btn btn-default navbar-btn" onclick="FB.logout()">Log Out</button>
         </div>
       </div>
     </nav>
@@ -52,6 +53,10 @@
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	FB.logout(function(response) {
+   	     // Person is now logged out
+    	});
+</script>
 </body>
 </html>
