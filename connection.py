@@ -45,7 +45,7 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-facebookuserid="cat" #to be populated and checked if it exists in mongodb already
+facebookuserid="cat2" #to be populated and checked if it exists in mongodb already
 numdocs = db.collection.find({"user":facebookuserid}).count()
 print(numdocs)
 if (numdocs == 0):
@@ -64,6 +64,7 @@ if (numdocs == 0):
     posts=db.posts #what is this??
     post_id=posts.insert(post)
     print post_id
+    numdocs++
   except pymongo.errors.ConnectionFailure, e:
     print "Could not connect to MongoDB: %s" % e
 
