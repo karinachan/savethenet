@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="profile.css">
 </head>
 <body>
 <div id="container">
@@ -39,15 +40,15 @@
     </div>
     <!-- END ALERT -->
 
-	<div id="left-panel">
+	<div id="left-panel" class="content-panel">
 		<h3>Your Profile</h3>
 
 	</div>
-	<div id="center-panel">
+	<div id="center-panel" class="content-panel">
 		<h3>Take Action</h3>
 
 	</div>
-	<div id="right-panel">
+	<div id="right-panel" class="content-panel">
 		<h3>Learn More</h3>
 
 	</div>
