@@ -1,9 +1,9 @@
 .content-panel {
-	width: 30%;
-	height: 200px;
+	width: 33%;
+	height: 400px;
 	border: 1px solid #d3d3d3;
 	border-radius: 5px;
 	float: left;
 	margin: 1px;
-	padding: 2px;
+	padding: 5px;
 }
