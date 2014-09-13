@@ -45,7 +45,7 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-facebookuserid=""; #to be populated and checked if it exists in mongodb already
+facebookuserid="blah"; #to be populated and checked if it exists in mongodb already
 
 if facebookuserid not in db.collection.find({"user":facebookuserid}):
   post= {"user": facebookuserid,#facebook userid
@@ -59,6 +59,13 @@ if facebookuserid not in db.collection.find({"user":facebookuserid}):
   {"description": "Change Profile Photo", "pval": 5, "name":"challenge6", "status":"incomplete","imgname":"cat2.png"},
   {"description": "Change Cover Photo", "pval": 5, "name":"challenge7", "status":"incomplete","imgname":"cat2.png"}],
   "passed":[]}
+  try: 
+    posts=db.posts #what is this??
+    post_id=posts.insert(post)
+    print post_id
+  except pymongo.errors.ConnectionFailure, e:
+    print "Could not connect to MongoDB: %s" % e
+
 
 urls=(
   '/', 'index',
@@ -82,14 +89,6 @@ class index:
     def GET(self):
       print os.getcwd()
       return render.index("YAY")
-try:
-    
-    posts=db.posts #what is this??
-    post_id=posts.insert(post)
-    print post_id
-
-except pymongo.errors.ConnectionFailure, e:
-   print "Could not connect to MongoDB: %s" % e
 
 
 app = web.application(urls, globals())
