@@ -80,27 +80,6 @@
     }
   }
 
-  function statusChangeCallback2(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      //testAPI();
-      //location.href = "profile.php"
-      console.log("YOU FUCKED UP");
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      console.log("FACEBOOK FUCKED UP");
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      location.href = "logout.php";
-    }
-  }
 
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
@@ -163,8 +142,8 @@
     FB.logout(function(response) {
         // Person is now logged out
         console.log("YAY");
+        location.href = "logout.php"
     });
-    statusChangeCallback2();
   });
       }
 
