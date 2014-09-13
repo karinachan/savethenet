@@ -1,8 +1,0 @@
-<html>
-<head>
-	<title>Thank You For Saving the Net</title>
-</head>
-<body>
-	<h1>You have successfully logged out</h1>
-</body>
-</html>

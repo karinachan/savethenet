@@ -1,18 +1,19 @@
+$def with (template)
 <html>
 <head>
-	<title>Save the Net--Your Profile</title>
-	<script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	
-	<link rel="stylesheet" type="text/css" href="profile.css">
+  <title>Save the Net--Your Profile $template</title>
+  <script type="text/javascript" src="bootstrap/js/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="profile.css">
 </head>
 <body>
 <div id="container">
 
-	<!-- NAVBAR --> 
-	<nav class="navbar navbar-default" role="navigation">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navnav">
@@ -29,7 +30,7 @@
       </div>
     </nav>
 
-    <!-- END NAVBAR --> 
+    <!-- END NAVBAR -->
 
     <!-- ALERT -->
     <div class="alert alert-danger fade in" role="alert">
@@ -41,18 +42,18 @@
     </div>
     <!-- END ALERT -->
 
-	<div id="left-panel" class="content-panel">
-		<h3>Your Profile</h3>
+  <div id="left-panel" class="content-panel">
+    <h3>Your Profile</h3>
 
-	</div>
-	<div id="center-panel" class="content-panel">
-		<h3>Take Action</h3>
+  </div>
+  <div id="center-panel" class="content-panel">
+    <h3>Take Action</h3>
 
-	</div>
-	<div id="right-panel" class="content-panel">
-		<h3>Learn More</h3>
+  </div>
+  <div id="right-panel" class="content-panel">
+    <h3>Learn More</h3>
 
-	</div>
+  </div>
 </div>
 
 <script>
@@ -91,13 +92,13 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '692319020856556',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.1' // use version 2.1
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
