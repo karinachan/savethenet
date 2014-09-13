@@ -45,10 +45,9 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-facebookuserid="bSLKJF;KEJFL;WKJF" #to be populated and checked if it exists in mongodb already
-founddocs = {}
-founddocs= db.collection.find({"user":facebookuserid})
-numdocs= founddocs.count()
+facebookuserid="cat" #to be populated and checked if it exists in mongodb already
+numdocs = db.collection.find({"user":facebookuserid}).count()
+print(numdocs)
 if (numdocs == 0):
   post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
