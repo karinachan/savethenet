@@ -43,7 +43,7 @@ $def with (template)
     <!-- END ALERT -->
 
   <div id="left-panel" class="content-panel">
-    <img src=http://graph.facebook.com/577376537/picture?type=large id="profile-pic" alt="profile picture" />
+    <img id="profile-picture" src="https://graph.facebook.com/<?= $fid ?>/picture">
     <h3 id="your-name"></h3>
     <p id="points"></p>
     <div id="badges"></div>
@@ -148,30 +148,30 @@ $def with (template)
       console.log(response);
       document.getElementById('your-name').innerHTML = response.first_name + ' ' + response.last_name;
     });
-    FB.api(
-    "/me/picture",
-    {
-        "redirect": true,
-        "height": "200",
-        "type": "normal",
-        "width": "200"
-    },
-    function (response) {
-      if (response && !response.error) {
-        /* handle the result */
-        console.log(response).data;
-        document.getElementById('prof-photo').src = response.data; 
-      }
-    }
-);
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      location.href = "index.php"
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      location.href = "index.php";
-    }
+//     FB.api(
+//     "/me/picture",
+//     {
+//         "redirect": true,
+//         "height": "200",
+//         "type": "normal",
+//         "width": "200"
+//     },
+//     function (response) {
+//       if (response && !response.error) {
+//         /* handle the result */
+//         console.log(response);
+//         document.getElementById('prof-photo').src = response; 
+//       }
+//     }
+// );
+//     } else if (response.status === 'not_authorized') {
+//       // The person is logged into Facebook, but not your app.
+//       location.href = "index.php"
+//     } else {
+//       // The person is not logged into Facebook, so we're not sure if
+//       // they are logged into this app or not.
+//       location.href = "index.php";
+//     }
 
   }
 
