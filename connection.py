@@ -39,8 +39,8 @@ from pymongo import MongoClient
 
 facebookuserid=""; #to be populated and checked if it exists in mongodb already
 
-if(facebookuserid in mongodb.collection.thing)
- no need to create;
+if(facebookuserid in collection)
+ #no need to create;
 else:
  post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
@@ -85,8 +85,6 @@ try:
     posts=db.posts #what is this??
     post_id=posts.insert(post)
     print post_id
-    post_id2=posts.insert(post1)
-    print post_id2
 
 except pymongo.errors.ConnectionFailure, e:
    print "Could not connect to MongoDB: %s" % e
