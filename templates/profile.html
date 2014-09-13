@@ -43,7 +43,12 @@ $def with (template)
     <!-- END ALERT -->
 
   <div id="left-panel" class="content-panel">
-    <h3>Your Profile</h3>
+    <img id="prof-photo" src="">
+    <h3 id="your-name"></h3>
+    <p id="points"></p>
+    <div id="badges"></div>
+
+    <button id="invite-friends">Invite Friends</button>
 
   </div>
   <div id="center-panel" class="content-panel">
@@ -114,6 +119,7 @@ $def with (template)
     statusChangeCallback(response);
   });
 
+
   };
 
   // Load the SDK asynchronously
@@ -134,6 +140,28 @@ $def with (template)
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
     });
+  }
+
+  function updateHuman() {
+    FB.api('/me', function(response) {
+      document.getElementById('your-name').innerHTML = response.name;
+    });
+    FB.api(
+    "/me/picture",
+    {
+        "redirect": true,
+        "height": "200",
+        "type": "normal",
+        "width": "200"
+    },
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+        console.log(response);
+        document.getElementById('prof-photo').src = response; 
+      }
+    }
+);
   }
 
   function logoutFB() {
