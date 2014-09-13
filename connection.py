@@ -53,7 +53,7 @@ for item in db.collection.find({"user":facebookuserid}):
     print "it exists"
 
 
-if (!found):
+if (found== False):
   post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
   "completed":[],
