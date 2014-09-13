@@ -146,7 +146,7 @@ $def with (template)
     if (response.status === 'connected') {
       FB.api('/me', function(response) {
       console.log(response);
-      document.getElementById('your-name').innerHTML = response;
+      document.getElementById('your-name').innerHTML = response.first_name + ' ' + response.last_name;
     });
     FB.api(
     "/me/picture",
@@ -172,7 +172,7 @@ $def with (template)
       // they are logged into this app or not.
       location.href = "index.php";
     }
-    
+
   }
 
   function logoutFB() {
