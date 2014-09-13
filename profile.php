@@ -137,10 +137,12 @@
   }
 
   function logoutFB() {
-      	console.log(FB.getAuthoResponse().value);
-      	FB.logout(function(response) {
+    FB.getLoginStatus(function(response) {
+    FB.logout(function(response) {
         // Person is now logged out
+        console.log("YAY");
     });
+  });
       }
 
     </script>
