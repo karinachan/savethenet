@@ -143,8 +143,7 @@ $def with (template)
   }
 
   function updateHuman() {
-    FB.api('/me', function(response) {
-      console.log(response);
+    FB.api('/me', {fields: 'last_name'} function(response) {
       document.getElementById('your-name').innerHTML = response;
     });
     FB.api(
