@@ -142,33 +142,7 @@
         // Person is now logged out
     });
       }
-</script>
 
-<script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '692319020856556',
-          xfbml      : true,
-          version    : 'v2.0'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-
-      function logoutFB() {
-      	console.log(FB.getAuthResponse());
-      	$access_token = $facebook->getAccessToken();
-      	console.log($access_token);
-      	FB.logout(function(response) {
-        // Person is now logged out
-    });
-      }
     </script>
 
 
