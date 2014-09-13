@@ -46,7 +46,7 @@ except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
 facebookuserid="b" #to be populated and checked if it exists in mongodb already
-founddocs = new dict{}
+founddocs = {}
 founddocs= db.collection.find({"user", facebookuserid})
 numdocs= len(founddocs)
 if (numdocs == 0):
