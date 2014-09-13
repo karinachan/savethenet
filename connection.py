@@ -47,7 +47,7 @@ except pymongo.errors.ConnectionFailure, e:
 
 found= False
 facebookuserid="catcat" #to be populated and checked if it exists in mongodb already
-for item in db.collection.find({"user":facebookuserid}):
+for item in db.collection.find():
   if facebookuserid in item:
     found= True
     print "it exists"
