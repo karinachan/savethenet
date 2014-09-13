@@ -49,6 +49,7 @@ facebookuserid="b"; #to be populated and checked if it exists in mongodb already
 
 
 cursor= db.collection.find({facebookuserid:{"$exists": True}})
+print(cursor)
 if cursor.count()==0:
   post= {"user": facebookuserid,#facebook userid
   "pts": 0, #sum of your completed challenges
