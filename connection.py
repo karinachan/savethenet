@@ -17,18 +17,17 @@ urls=(
   '/logout','logout'
 )
 
+render = web.template.render('templates')
+
 class profile:
     def GET(self):
       print os.getcwd()
-      os.chdir('templates')
-      render = web.template.render('./templates/profile.html')
       return render.profile("YOU! (from the web.py)")
 
-class bye:
+class logout:
     def GET(self):
       print os.getcwd()
       os.chdir('templates')
-      render = web.template.render('./templates/logout.html')
       return render.logout("Claire")
 
 try:
