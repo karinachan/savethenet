@@ -159,8 +159,8 @@ $def with (template)
     function (response) {
       if (response && !response.error) {
         /* handle the result */
-        console.log(response);
-        document.getElementById('prof-photo').src = response; 
+        console.log(response).data;
+        document.getElementById('prof-photo').src = response.data; 
       }
     }
 );
