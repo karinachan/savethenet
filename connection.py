@@ -18,11 +18,14 @@ urls=(
 
 class profile:
     def GET(self):
+      render = web.template.render('templates/profile.html')
       return render.profile("YOU! (from the web.py)")
 
 class bye:
     def GET(self):
+      render = web.template.render('templates/logout.html')
       return render.logout("Claire")
+      
 try:
     client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
     print "Connected successfully!!!"
