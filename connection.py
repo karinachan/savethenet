@@ -45,34 +45,8 @@ try:
 except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
-facebookuserid="fantastic" #to be populated and checked if it exists in mongodb already
-#print facebookuserid
-#numdocs=db.collection.find({"user":facebookuserid}).count()
-#print db.collection.find().forEach(function(myDoc) { print( "user: " + myDoc.name ); });
-#
-#
-# if (!found):
-#   post= {"user": facebookuserid,#facebook userid
-#   "pts": 0, #sum of your completed challenges
-#   "completed":[],
-#   "incomplete":[{"description": "Raise Awareness", "pval": 10, "name":"challenge1", "status":"incomplete","imgname":"cat2.png"},
-#   {"description": "Educate Yourself", "pval": 5, "name":"challenge2","status":"incomplete","imgname":"cat3.png"},
-#   {"description": "Raise Awareness", "pval": 10, "name":"challenge3", "status":"incomplete","imgname":"cat2.png"},
-#   {"description": "Tweet Out", "pval": 10, "name":"challenge4", "status":"incomplete","imgname":"cat2.png"},
-#   {"description": "Write to the FCC", "pval": 15, "name":"challenge5", "status":"incomplete","imgname":"cat2.png"},
-#   {"description": "Change Profile Photo", "pval": 5, "name":"challenge6", "status":"incomplete","imgname":"cat2.png"},
-#   {"description": "Change Cover Photo", "pval": 5, "name":"challenge7", "status":"incomplete","imgname":"cat2.png"}],
-#   "passed":[]}
-#   try:
-#     posts=db.posts #what is this??
-#     post_id=posts.insert(post)
-#     print post_id
-#     numdocs += 1
-#   except pymongo.errors.ConnectionFailure, e:
-#     print "Could not connect to MongoDB: %s" % e
+facebookuserid="fantastic" #!!!! to be populated
 
-#print(numdocs)
-#if (numdocs == 0):
 post= {"_id": facebookuserid,#facebook userid
 "pts": 0, #sum of your completed challenges
 "completed":[],
