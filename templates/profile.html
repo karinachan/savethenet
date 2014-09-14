@@ -197,7 +197,7 @@ $def with (template)
   <div id="center-panel" class="content-panel">
     <h3>Take Action</h3>
     $for p in post['all_challenges']:
-      <div class="challenge-li $p['status']" data-toggle="modal" data-target="#$p['name']">$p['description']</div>
+      <div id="div$p['name']" class="challenge-li $p['status']" data-toggle="modal" data-target="#$p['name']">$p['description']</div>
   </div>
   <div id="right-panel" class="content-panel">
     <h3>Learn More</h3>
@@ -227,7 +227,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" name="challenge1" onclick='upupdateDB(this.name)'>Complete</button>
+        <button type="button" class="btn btn-success" name="challenge1" onclick='adjustResults(this.name)'>Complete</button>
 
 
       </div>
@@ -249,7 +249,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" name="challenge3" onclick='upupdateDB(this.name)'>Complete</button>
+        <button type="button" class="btn btn-success" name="challenge3" onclick='adjustResults(this.name)'>Complete</button>
 
 
       </div>
@@ -273,7 +273,7 @@ $def with (template)
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <form action="/u" method="post">
-          <button type="button" class="btn btn-success" name="challenge2"  onclick="upupdateDB(this.name)">Complete</button>
+          <button type="button" class="btn btn-success" name="challenge2"  onclick="adjustResults(this.name)">Complete</button>
         </form>
 
 
@@ -304,7 +304,7 @@ $def with (template)
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
     <form action="/u" method="post">
-      <button type="button" class="btn btn-success" name="challenge4"  onclick="upupdateDB(this.name)">Complete</button>
+      <button type="button" class="btn btn-success" name="challenge4"  onclick="adjustResults(this.name)">Complete</button>
     </form>
       </div>
     </div>
@@ -327,7 +327,7 @@ $def with (template)
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <form action="../connection.py" method="post">
-          <button type="button" class="btn btn-success" name="challenge5" onclick="upupdateDB(this.name)">Complete</button>
+          <button type="button" class="btn btn-success" name="challenge5" onclick="adjustResults(this.name)">Complete</button>
         </form>
       </div>
     </div>
@@ -348,7 +348,7 @@ $def with (template)
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <form action="../connection.py" method="post">
-          <button type="button" class="btn btn-success" name="challenge6" onclick="upupdateDB(this.name)">Complete</button>
+          <button type="button" class="btn btn-success" name="challenge6" onclick="adjustResults(this.name)">Complete</button>
         </form>
       </div>
     </div>
@@ -369,7 +369,7 @@ $def with (template)
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <form action="../connection.py" method="post">
-          <button type="button" class="btn btn-success" name="challenge7" onclick="upupdateDB(this.name)">Complete</button>
+          <button type="button" class="btn btn-success" name="challenge7" onclick="adjustResults(this.name)">Complete</button>
         </form>
       </div>
     </div>
@@ -387,8 +387,10 @@ function upupdateDB(nme) {
 }
 
 function adjustResults(nnmmee) {
-Document.getElementById(nnmmee).removeClass("incomplete");
-Document.getElementById(nnmmee).addClass("complete");
+  console.log(nnmmee);
+  var elem = document.getElementById("div" + nnmmee);
+  console.log(elem);
+
 }
 </script>
 
