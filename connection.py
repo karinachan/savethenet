@@ -135,19 +135,18 @@ class complete:
     def POST(self):
       user_id = web.input().user_id
       chall = web.input().chall_name
-      print chall 
+      print chall
+      {user_id : 123456 , "items.item_name":"my_item_one"} , {$inc: {"items.$.price": 10}})
       collection.update({
         "_id": user_id,
-        "all_challenges": {
-            "name": chall 
-          }
+        "all_challenges"."name": chall
         },
         {
-        $set : {
-          'all_challenges.$.status' : "complete"
+        $inc : {
+          "all_challenges.$.status" : "complete"
         }
         }
-        })
+        )
       print "COMPLETED"
       # INSERT mongo logic here
       # var MongoClient = require('mongodb').MongoClient,
