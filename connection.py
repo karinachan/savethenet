@@ -103,8 +103,8 @@ class profile:
         #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
     except pymongo.errors.DuplicateKeyError, e:
       print("hello nope")
-    print ("profile self")
-    print os.getcwd()
+    print("profile self")
+    print(os.getcwd())
     return render.profile("YOU! (from the web.py)")
 
 class logout:
