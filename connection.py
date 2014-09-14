@@ -80,7 +80,7 @@ render = web.template.render('templates')
 
 class profile:
     def GET(self, user_id=None):
-      if (user_id is not "logout.php" or user_id is not "index.php"):
+      if (user_id is not "logout.html" or user_id is not "index.html"):
         post= {"_id": user_id,#facebook userid
         "pts": 0, #sum of your completed challenges
         "completed":[],
