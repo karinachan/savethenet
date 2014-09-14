@@ -85,27 +85,27 @@ def RepresentsInt(s):
        return False
 
 class profile:
-   def GET(self, user_id=None):
-     try:
-       if (RepresentsInt(user_id)): #if the user id is not a number, don't do the thing
-          post= {"_id": user_id,#facebook userid
-          "pts": 0, #sum of your completed challenges
-          "completed":[],
-          "incomplete":[{"description": "Raise Awareness by Facebook post!", "pval": 10, "name":"challenge1", "status":"incomplete","imgname":"cat2.png"},
-          {"description": "Read two articles; educate yourself!", "pval": 5, "name":"challenge2","status":"incomplete","imgname":"cat3.png"},
-          {"description": "Raise Awareness", "pval": 10, "name":"challenge3", "status":"incomplete","imgname":"cat2.png"},
-          {"description": "Tweet Out", "pval": 10, "name":"challenge4", "status":"incomplete","imgname":"cat2.png"},
-          {"description": "Write to the FCC", "pval": 15, "name":"challenge5", "status":"incomplete","imgname":"cat2.png"},
-          {"description": "Change Profile Photo", "pval": 5, "name":"challenge6", "status":"incomplete","imgname":"cat2.png"},
-          {"description": "Change Cover Photo", "pval": 5, "name":"challenge7", "status":"incomplete","imgname":"cat2.png"}],
-          "passed":[]}
-          client['savethedata']['xxx'].insert(post)
-          #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
-     except pymongo.errors.DuplicateKeyError, e:
-        print("hello nope")
-      print ("profile self")
-      print os.getcwd()
-      return render.profile("YOU! (from the web.py)")
+  def GET(self, user_id=None):
+    try:
+      if (RepresentsInt(user_id)): #if the user id is not a number, don't do the thing
+        post= {"_id": user_id,#facebook userid
+        "pts": 0, #sum of your completed challenges
+        "completed":[],
+        "incomplete":[{"description": "Raise Awareness by Facebook post!", "pval": 10, "name":"challenge1", "status":"incomplete","imgname":"cat2.png"},
+        {"description": "Read two articles; educate yourself!", "pval": 5, "name":"challenge2","status":"incomplete","imgname":"cat3.png"},
+        {"description": "Raise Awareness", "pval": 10, "name":"challenge3", "status":"incomplete","imgname":"cat2.png"},
+        {"description": "Tweet Out", "pval": 10, "name":"challenge4", "status":"incomplete","imgname":"cat2.png"},
+        {"description": "Write to the FCC", "pval": 15, "name":"challenge5", "status":"incomplete","imgname":"cat2.png"},
+        {"description": "Change Profile Photo", "pval": 5, "name":"challenge6", "status":"incomplete","imgname":"cat2.png"},
+        {"description": "Change Cover Photo", "pval": 5, "name":"challenge7", "status":"incomplete","imgname":"cat2.png"}],
+        "passed":[]}
+        client['savethedata']['xxx'].insert(post)
+        #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
+    except pymongo.errors.DuplicateKeyError, e:
+      print("hello nope")
+    print ("profile self")
+    print os.getcwd()
+    return render.profile("YOU! (from the web.py)")
 
 class logout:
     def GET(self):
