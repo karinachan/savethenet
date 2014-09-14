@@ -101,7 +101,7 @@ class profile:
           "passed":[]}
           client['savethedata']['xxx'].insert(post)
           #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
-      except pymongo.errors.DuplicateKeyError, e:
+     except pymongo.errors.DuplicateKeyError, e:
         print("hello nope")
       print ("profile self")
       print os.getcwd()
