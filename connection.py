@@ -139,11 +139,12 @@ class complete:
       #{user_id : 123456 , "items.item_name":"my_item_one"} , {$inc: {"items.$.price": 10}})
       collection.update({
         '_id': user_id,
-        'all_challenges.name': chall
+        'all_challenges.name': chall,
+        'all_challenges.status': 'incomplete'
         },
         {
         '$set' : {
-          'all_challenges.status' : 'complete'
+          'all_challenges.status.$' : 'complete'
         }
         }
         )
