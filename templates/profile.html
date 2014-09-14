@@ -138,6 +138,20 @@ $def with (template)
   });
       }
 
+  var userID = FB.getUserID(); 
+
+    function updateDB() {
+
+    var MongoClient = require('mongodb').MongoClient
+      , format = require('util').format;
+
+    MongoClient.connect('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata', function(err, db) {
+    if(err) throw err;
+
+    db.collection('savethedata1').update({_id: userID}, {$set: {status:"complete"}});
+    });
+    }
+
     </script>
 
     <script type="text/javascript">
@@ -179,9 +193,10 @@ $def with (template)
     <img id="prof-photo" src="">
     <h3 id="your-name"></h3>
     <h4 id="points">Points: $post['pts']</h4>
+    <h4>Badges</h4>
     <div id="badges"></div>
-
-    <button id="invite-friends" class="btn btn-info">Invite Friends</button>
+    <h4>Invite Friends</h4>
+    <div class="fb-share-button" data-href="https://savethenet.herokuapp.com"></div>
 
   </div>
   <div id="center-panel" class="content-panel">
@@ -217,9 +232,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      <form action="/u" method="post">
-        <button type="button" class="btn btn-success" name="challenge1">Complete</button>
-      </form>
+        <button type="button" class="btn btn-success" name="challenge1" onclick="updateDB();">Complete</button>
 
 
       </div>
