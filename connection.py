@@ -72,7 +72,7 @@ except pymongo.errors.ConnectionFailure, e:
 urls=(
   '/', 'index',
   '/u/(.+)', 'profile', #specifies that stuff comes after the u (user_id)
-  '/bye','logout'
+  '/u/bye','logout'
 )
 
 
