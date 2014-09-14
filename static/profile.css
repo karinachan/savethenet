@@ -5,26 +5,28 @@
 	border-radius: 5px;
 	float: left;
 	margin: 1px;
-	padding: 5px;
+	padding: 15px;
 }
 
 .challenge-li {
 	width: 45%; 
-	padding: 5px; 
+	padding: 10px; 
 	margin: 5px; 
 	height: 150px;
 	color: black;
 	text-align: center;
 	border-radius: 5px;
 	float: left;
+	font-family: Helvetica;
+	text-align: center; 
 }
 
 .incomplete {
-	background-color: yellow;
+background-color: rgb(161, 210, 255);
 }
 
 .complete {
-	background-color: green;
+background-color: rgb(186, 233, 155);
 }
 
 .passed {
@@ -33,4 +35,30 @@
 
 .pvaltotal {
 	display: none;
+} 
+
+h3, h4 {
+	font-family: "Helvetica", sans-serif;
+	font-style: "oblique";
+} 
+#your-name {
+	float: left; 
+	margin-right: 150px; 
+	margin-bottom: 10px; 
+}
+#prof-photo {
+	float: left; 
+	margin: 15px; 
+}
+#points {
+	padding-bottom: 30px;
+}
+
+a.fb_button.fb_button_medium.btn.btn-default.navbar-btn {
+float: right;
+}
+
+.navbar-brand {
+	font-family: "Lucida Sans Typewriter", sans-serif;
+	font-size: 28px;
 }

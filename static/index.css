@@ -1,14 +1,23 @@
 #logo {
-	font-family: "Lucida Sans Typewriter Oblique", sans-serif;
-	text-align: center;
-	color: white;
+	width: 650px;
 }
 #tagline {
-	font-family: "Lucida Sans Typewriter Oblique", sans-serif;
+	font-family: "Lucida Sans Typewriter", sans-serif;
+	font-style: "oblique";
 	text-align: center;
-	color: white;
+	color: grey;
+	padding-bottom: 30px;
 }
 
 #loading-cat {
 	width: 100px;
+}
+
+body {
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-top: 100px;
+	width: 700px;
 }
