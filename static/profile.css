@@ -4,8 +4,9 @@
 	border: 1px solid #d3d3d3;
 	border-radius: 5px;
 	float: left;
-	margin: 1px;
+	margin: 2px;
 	padding: 15px;
+	background-color: white;
 }
 
 .challenge-li {
@@ -61,4 +62,8 @@ float: right;
 .navbar-brand {
 	font-family: "Lucida Sans Typewriter", sans-serif;
 	font-size: 28px;
+}
+
+body {
+	background-color: aliceblue;
 }
