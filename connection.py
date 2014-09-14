@@ -134,8 +134,7 @@ class index:
 class complete:
     def POST(self):
       user_id = web.input().user_id
-      post = client['savethedata']['xxx'].find_one({"_id": user_id})
-      post.update({"$set": {"status":"complete"}});
+      collection.update({"_id":user_id}, {"$set": {"status":"complete"}})
       print "COMPLETED"
       # INSERT mongo logic here
       # var MongoClient = require('mongodb').MongoClient,
