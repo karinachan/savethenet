@@ -71,7 +71,7 @@ except pymongo.errors.ConnectionFailure, e:
 
 urls=(
   '/', 'index',
-  '/u', 'profile',
+  '/u/(.+)', 'profile',
   '/bye','logout'
 )
 
@@ -79,7 +79,9 @@ urls=(
 render = web.template.render('templates')
 
 class profile:
-    def GET(self):
+    def GET(self, user_id=None):
+
+      client['savethedata']['xxx'].insert({"user_id": user_id})
 
       print ("profile self")
       print os.getcwd()
