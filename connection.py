@@ -70,7 +70,8 @@ except pymongo.errors.ConnectionFailure, e:
 urls=(
   '/', 'index',
   '/u/(.+)', 'profile', #specifies that stuff comes after the u (user_id)
-  '/bye','logout'
+  '/bye','logout',
+  '/complete', 'complete'
 )
 
 
@@ -130,6 +131,21 @@ class index:
       print os.getcwd()
       return render.index("YAY")
 
+class complete:
+    def POST(self):
+      user_id = web.input().user_id
+      post = client['savethedata']['xxx'].find_one({"_id": user_id})
+      post.update({"$set": {"status":"complete"}});
+      print "COMPLETED"
+      # INSERT mongo logic here
+      # var MongoClient = require('mongodb').MongoClient,
+      # format      = require('util').format;
+
+      # MongoClient.connect('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata', function(err, db) {
+      #   if(err) throw err;
+      #   db.collection('savethedata1').update({_id: userID}, {$set: {status:"complete"}});
+      # });
+      print web.input().user_id
 
 app = web.application(urls, globals())
 

@@ -6,16 +6,7 @@ $def with (template)
   <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
   <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/admin.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/index.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/aggregation_curson.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/collection.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/command_cursor.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/cursor.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/cursorstream.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/db.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/scope.js"></script>
-  <script type="text/javascript" src="/node-mongodb-native-master/lib/mongodb/utils.js"></script>
+  
 
 
 
@@ -48,19 +39,7 @@ $def with (template)
     }
   }
 
-  function updateDB() {
-
-    var userID = FB.getUserID();
-
-    var MongoClient = require('mongodb').MongoClient
-      , format = require('util').format;
-
-    MongoClient.connect('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata', function(err, db) {
-    if(err) throw err;
-
-    db.collection('savethedata1').update({_id: userID}, {$set: {status:"complete"}});
-    });
-    }
+  
 
 
   // This function is called when someone finishes with the Login
@@ -248,7 +227,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" name="challenge1" onclick="updateDB();">Complete</button>
+        <button type="button" class="btn btn-success" name="challenge1" onclick='upupdateDB()'>Complete</button>
 
 
       </div>
@@ -332,6 +311,17 @@ $def with (template)
     </div>
   </div>
 </div>
+
+<script>
+function upupdateDB() {
+  $$.ajax({
+    type: 'POST',
+    url: '/complete',
+    data: { 'user_id': FB.getUserID()}
+  });
+  console.log("POSTED.");
+}
+</script>
 
 </body>
 </html>
