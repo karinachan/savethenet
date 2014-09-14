@@ -23,14 +23,14 @@ $def with (template)
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       //testAPI();
-      //location.href = "profile.php"
+      //location.href = "profile.html"
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      location.href = "index.php"
+      location.href = "index.html"
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      location.href = "index.php";
+      location.href = "index.html";
     }
   }
 
@@ -117,11 +117,11 @@ $def with (template)
 );
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      location.href = "index.php"
+      location.href = "index.html"
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      location.href = "index.php";
+      location.href = "index.html";
     }
 
   }
@@ -131,7 +131,7 @@ $def with (template)
     FB.logout(function(response) {
         // Person is now logged out
         console.log("YAY");
-        location.href = "logout.php"
+        location.href = "logout.html"
     });
   });
       }
