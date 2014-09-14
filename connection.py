@@ -142,7 +142,7 @@ class complete:
         "all_challenges.name": chall
         },
         {
-        $set : {
+        $save : {
           "all_challenges.$.status" : "complete"
         }
         }
