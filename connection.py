@@ -67,8 +67,6 @@ except pymongo.errors.ConnectionFailure, e:
   print "Could not connect to MongoDB: %s" % e
 
 
-
-
 urls=(
   '/', 'index',
   '/u/(.+)', 'profile', #specifies that stuff comes after the u (user_id)
@@ -87,7 +85,8 @@ def RepresentsInt(s):
 class profile:
   def GET(self, user_id=None):
     try:
-      if (RepresentsInt(user_id)): #if the user id is not a number, don't do the thing
+      post = client['savethedata']['xxx'].find_one({"_id": user_id})
+      if not post and (RepresentsInt(user_id)): #if the user id is not a number, don't do the thing
         post= {"_id": user_id,#facebook userid
         "pts": 0, #sum of your completed challenges
         "completed":[],
@@ -105,7 +104,8 @@ class profile:
       print("hello nope")
     print("profile self")
     print(os.getcwd())
-    return render.profile("YOU! (from the web.py)")
+    return web.template.render('templates', globals={"post": post}).profile("YOU! (from the web.py)")
+    #return render.profile("YOU! (from the web.py)", globals={'posts':[1]})
 
 class logout:
     def GET(self):

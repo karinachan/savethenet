@@ -186,7 +186,10 @@ $def with (template)
   </div>
   <div id="center-panel" class="content-panel">
     <h3>Take Action</h3>
-
+    <ul>
+    $for p in post['incomplete']:
+      <li>$p['status'] $p['description']</li>
+    </ul>
   </div>
   <div id="right-panel" class="content-panel">
     <h3>Learn More</h3>
