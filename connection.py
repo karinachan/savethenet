@@ -77,11 +77,17 @@ urls=(
 
 
 render = web.template.render('templates')
+def RepresentsInt(s):
+   try:
+       int(s)
+       return True
+   except ValueError:
+       return False
 
 class profile:
-    def GET(self, user_id=None):
-      try:
-        if (user_id is not "logout.html" or user_id is not "index.html"):
+   def GET(self, user_id=None):
+     try:
+       if (RepresentsInt(user_id)): #if the user id is not a number, don't do the thing
           post= {"_id": user_id,#facebook userid
           "pts": 0, #sum of your completed challenges
           "completed":[],
