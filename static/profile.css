@@ -67,3 +67,13 @@ float: right;
 body {
 	background-color: aliceblue;
 }
+
+.badgee {
+	border: 2px solid black;
+	margin: 25px;
+	border-radius: 5px;
+	float: left; 
+	display: inline-block !important;
+}#badges {
+	width: 100%;
+}
