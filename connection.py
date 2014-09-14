@@ -143,7 +143,7 @@ class complete:
         },
         {
         '$set' : {
-          'all_challenges.$.status' : 'complete'
+          'all_challenges.status' : 'complete'
         }
         }
         )
