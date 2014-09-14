@@ -137,6 +137,13 @@ class complete:
       chall = web.input().chall_name
       print chall
       #{user_id : 123456 , "items.item_name":"my_item_one"} , {$inc: {"items.$.price": 10}})
+      col= collection.find({
+        '_id': user_id,
+        'all_challenges.name': chall,
+        'all_challenges.status': 'incomplete'
+        })
+      for c in col:
+        print c
       collection.update({
         '_id': user_id,
         'all_challenges.name': chall,
