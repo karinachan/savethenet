@@ -147,11 +147,11 @@ class complete:
       collection.update({
         '_id': user_id,
         'all_challenges.name': chall,
-        'all_challenges.status': 'incomplete'
+        'all_challenges.$.status': 'incomplete'
         },
         {
         '$set' : {
-          'all_challenges.status.$' : 'complete'
+          'all_challenges.$.status' : 'complete'
         }
         }
         )
