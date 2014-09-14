@@ -110,7 +110,7 @@ class profile:
     challengeid = web.input(name)
     #syntax for updating posts via pymongo
     try:
-      post = client['savethedata']['xxx'].update({'_id':user_id}, {"all_challenges": {name:challengeid, "status":"complete"}}},{upsert:true})
+      post = client['savethedata']['xxx'].update({'_id':user_id}, {"all_challenges": {name:challengeid, "status":"complete"}},{upsert:true})
       print "update worked!"
     except pymongo.errors.DuplicateKeyError, e:
       print("hello nope")
