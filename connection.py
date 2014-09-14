@@ -82,6 +82,7 @@ def RepresentsInt(s):
    except ValueError:
        return False
 
+
 class profile:
   def GET(self, user_id=None):
     try:
@@ -104,9 +105,20 @@ class profile:
     print(os.getcwd())
     return web.template.render('templates', globals={"post": post}).profile("YOU! (from the web.py)")
     #return render.profile("YOU! (from the web.py)", globals={'posts':[1]})
+  def POST(self, user_id=None):
+    """update user"""
+    challengeid = web.input(name)
+    #syntax for updating posts via pymongo
+    try:
+      post = client['savethedata']['xxx'].update({'_id':user_id}, {"all_challenges": {name:challengeid, "status":"complete"}}},{upsert:true})
+      print "update worked!"
+    except pymongo.errors.DuplicateKeyError, e:
+      print("hello nope")
+    return web.template.render('templates', globals={"post":post}).profile("You! (from web.py)")
 
 class logout:
     def GET(self):
+ #update in this method (limited in time...)
 
       print ("logout self")
       print os.getcwd()
