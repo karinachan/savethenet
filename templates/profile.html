@@ -219,10 +219,32 @@ $def with (template)
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Raise Awareness</h4>
+        <h4 class="modal-title" id="myModalLabel">Raise Awareness by Facebook post!</h4>
       </div>
       <div class="modal-body">
         <p>Help save the Internet: Share this site to Facebook to help others gain knowledge about actions they can take to preserve Net Neutrality.</p>
+        <div class="fb-share-button" data-href="https://savethenet.herokuapp.com"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success" name="challenge1" onclick='upupdateDB(this.name)'>Complete</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="challenge3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Raise Awareness</h4>
+      </div>
+      <div class="modal-body">
+        <p>Now that you've read a little more, post to Facebook again about what you've learned!</p>
         <div class="fb-share-button" data-href="https://savethenet.herokuapp.com"></div>
       </div>
       <div class="modal-footer">
@@ -242,7 +264,7 @@ $def with (template)
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Educate Yourself</h4>
+        <h4 class="modal-title" id="myModalLabel">Read two articles; educate yourself!</h4>
       </div>
       <div class="modal-body">
         <p>freepress has summarized it better than we ever could. Educate yourself about the latest developments in the battle over Net Neutrality!</p>
@@ -262,7 +284,7 @@ $def with (template)
 
 
 <!-- Modal -->
-<div class="modal fade" id="challenge3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -291,7 +313,7 @@ $def with (template)
 
 
 <!-- Modal -->
-<div class="modal fade" id="challenge4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -301,6 +323,48 @@ $def with (template)
       <div class="modal-body">
         <p>Want to share your thoughts? Take a moment to send a note to the FCC about your thoughts on Net Neutrality.</p>
         <button class="btn btn-default"><a href="mailto:openinternet@fcc.gov">Send an Email</a></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <form action="../connection.py" method="post">
+          <button type="button" class="btn btn-success" name="challenge4">Complete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="challenge6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Profile Photo</h4>
+      </div>
+      <div class="modal-body">
+        <a href="http://tumblr.fightforthefuture.org/post/96550398438/september-10th-internet-slowdown-organizing-materials">With plenty of options to choose from,</a><p> speak out by updating your profile picture.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <form action="../connection.py" method="post">
+          <button type="button" class="btn btn-success" name="challenge4">Complete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="challenge7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Change Cover Photo</h4>
+      </div>
+      <div class="modal-body">
+        <p>While you're at it, why not also update your cover photo?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
