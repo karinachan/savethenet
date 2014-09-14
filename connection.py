@@ -136,7 +136,18 @@ class complete:
       user_id = web.input().user_id
       chall = web.input().chall_name
       print chall 
-      #collection.update({"_id":user_id}, {"$set": {"status":"complete"}})
+      collection.update({
+        "_id": user_id,
+        "all_challenges": {
+            "name": chall 
+          }
+        },
+        {
+        $set : {
+          'all_challenges.$.status' : "complete"
+        }
+        }
+        })
       print "COMPLETED"
       # INSERT mongo logic here
       # var MongoClient = require('mongodb').MongoClient,
