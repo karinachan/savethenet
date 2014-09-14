@@ -80,7 +80,7 @@ render = web.template.render('templates')
 
 class profile:
     def GET(self, user_id=None):
-      try
+      try:
         if (user_id is not "logout.html" or user_id is not "index.html"):
           post= {"_id": user_id,#facebook userid
           "pts": 0, #sum of your completed challenges
@@ -96,7 +96,7 @@ class profile:
           client['savethedata']['xxx'].insert(post)
           #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
       except pymongo.errors.DuplicateKeyError, e:
-        console.log("hello nope")
+        print("hello nope")
       print ("profile self")
       print os.getcwd()
       return render.profile("YOU! (from the web.py)")
