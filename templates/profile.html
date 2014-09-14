@@ -1,7 +1,7 @@
 $def with (template)
 <html>
 <head>
-  <title>Save the Net--Your Dashboard $template</title>
+  <title>Save the Net: I Can Haz Net Neutrality?!</title>
   <script type="text/javascript" src="/static/bootstrap/js/jquery-2.1.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
@@ -186,7 +186,12 @@ $def with (template)
     <h4 id="points">Points: <span id="numpoints">$post['pts']</span></h4>
     <h4>Badges</h4>
     <div id="badges">
-    <img class="badgee" src="/static/images/badge2.jpg">
+    <img class="badgee" src="/static/images/badge2.jpg" data-toggle="tooltip" title="For Joining">
+    <!-- Generated markup by the plugin -->
+  <div class="tooltip top" role="tooltip">
+   <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">Joined the Fight for Net Neutrality!</div> 
+  </div>
     <img class="badgee" src="/static/images/badge3.jpg">
     <img class="badgee" src="/static/images/badge4.jpg">
     <img class="badgee" src="/static/images/badge5.jpg">
@@ -274,9 +279,8 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <form action="/u" method="post">
+        
           <button type="button" class="btn btn-success" name="challenge2" data-dismiss="modal" onclick="adjustResults(this.name)">Complete</button>
-        </form>
 
 
       </div>
@@ -305,9 +309,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-    <form action="/u" method="post">
       <button type="button" class="btn btn-success" name="challenge4"  data-dismiss="modal" onclick="adjustResults(this.name)">Complete</button>
-    </form>
       </div>
     </div>
   </div>
@@ -328,9 +330,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <form action="../connection.py" method="post">
           <button type="button" class="btn btn-success" name="challenge5" data-dismiss="modal" onclick="adjustResults(this.name)">Complete</button>
-        </form>
       </div>
     </div>
   </div>
@@ -349,9 +349,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <form action="../connection.py" method="post">
           <button type="button" class="btn btn-success" name="challenge6" data-dismiss="modal" onclick="adjustResults(this.name)">Complete</button>
-        </form>
       </div>
     </div>
   </div>
@@ -370,9 +368,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <form action="../connection.py" method="post">
           <button type="button" class="btn btn-success" name="challenge7" data-dismiss="modal" onclick="adjustResults(this.name)">Complete</button>
-        </form>
       </div>
     </div>
   </div>
