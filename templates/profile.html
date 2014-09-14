@@ -186,10 +186,8 @@ $def with (template)
   </div>
   <div id="center-panel" class="content-panel">
     <h3>Take Action</h3>
-    <ul>
-    $for p in post['incomplete']:
-      <li>$p['status'] $p['description']</li>
-    </ul>
+    $for p in post['all_challenges']:
+      <div class="challenge-li $p['status']" data-toggle="modal" data-target="#$p['name']">$p['description']</div>
   </div>
   <div id="right-panel" class="content-panel">
     <h3>Learn More</h3>
@@ -205,12 +203,12 @@ $def with (template)
 </div>
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#challenge1">
   Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -230,12 +228,12 @@ $def with (template)
 </div>
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#challenge2">
   Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -255,12 +253,12 @@ $def with (template)
 </div>
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal3">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#challenge3">
   Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -286,12 +284,12 @@ $def with (template)
 </div>
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal4">
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#challenge4">
   Launch demo modal
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="challenge4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
