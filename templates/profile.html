@@ -227,7 +227,7 @@ $def with (template)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" name="challenge1" onclick='upupdateDB()'>Complete</button>
+        <button type="button" class="btn btn-success" name="challenge1" onclick='upupdateDB(this.name)'>Complete</button>
 
 
       </div>
@@ -313,11 +313,11 @@ $def with (template)
 </div>
 
 <script>
-function upupdateDB() {
+function upupdateDB(nme) {
   $$.ajax({
     type: 'POST',
     url: '/complete',
-    data: { 'user_id': FB.getUserID()}
+    data: { 'user_id': FB.getUserID(), 'chall_name': nme}
   });
   console.log("POSTED.");
 }

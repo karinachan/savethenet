@@ -134,7 +134,9 @@ class index:
 class complete:
     def POST(self):
       user_id = web.input().user_id
-      collection.update({"_id":user_id}, {"$set": {"status":"complete"}})
+      chall = web.input().chall_name
+      print chall 
+      #collection.update({"_id":user_id}, {"$set": {"status":"complete"}})
       print "COMPLETED"
       # INSERT mongo logic here
       # var MongoClient = require('mongodb').MongoClient,
