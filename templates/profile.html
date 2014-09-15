@@ -374,6 +374,7 @@
 
 <script>
 function upupdateDB(chall_name) {
+  console.log("FOUND THE METHOD");
   var url = location.href.split('/');
 
   $.ajax({
@@ -381,7 +382,7 @@ function upupdateDB(chall_name) {
     url: location.href,
     data: {'name': chall_name}
   });
-  location.reload();
+  location.reload(); 
 </script>
 
 </body>
