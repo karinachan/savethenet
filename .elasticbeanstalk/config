@@ -1,6 +1,0 @@
-[global]
-ApplicationName=savethenet
-DevToolsEndpoint=git.elasticbeanstalk.us-west-2.amazonaws.com
-EnvironmentName=savethenet-env
-Region=us-west-2
-AwsCredentialFile=/Users/karinachan/.elasticbeanstalk/aws_credential_file
