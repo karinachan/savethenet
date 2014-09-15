@@ -31,7 +31,7 @@ def updateUser(user_id=None):
           'all_challenges.$.status' : 'complete'
         }
       })
-  return {'success': True}
+  return render_template('profile.html', user1=user1)
 
 @app.route('/u/<user_id>', methods=['GET'])
 def getUser(user_id=None):
