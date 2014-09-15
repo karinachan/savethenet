@@ -21,7 +21,7 @@ def index():
   return render_template('index.html') #what are we supposed to return???
 
 @app.route('/u/<user_id>', methods=['POST'])
-def updateUser(user_id=None):   
+def updateUser(user_id=None):
   client['savethedata']['xxx'].update({
         '_id': user_id,
         'all_challenges.name': request.form['name'],
@@ -37,7 +37,9 @@ def updateUser(user_id=None):
 def getUser(user_id=None):
   try:
     user1 = client['savethedata']['xxx'].find_one({"_id": user_id})
-    if not user1: 
+    #print user1
+    if not user1 or user1== None:
+      print "inside for new user"
       user1 = {"_id": user_id,#facebook userid
       "pts": 0, #sum of your completed challenges
       "all_challenges":[{"description": "Raise Awareness by Facebook post!", "pval": 10, "name":"challenge1", "status":"incomplete"},
@@ -50,13 +52,14 @@ def getUser(user_id=None):
       "badges":[{"badgeid":"badge1", "tooltiptext":"Successfully Logged In", "badgephoto":"badge1.jpg"},{"badgeid":"badge2", "tooltiptext":"Took First Action", "badgephoto":"badge2.jpg"}
       ,{"badgeid":"badge3", "tooltiptext":"Gained Ten Points", "badgephoto":"badge3.jpg"},{"badgeid":"badge4", "tooltiptext":"Gained 25 Points", "badgephoto":"badge4.jpg"},
       {"badgeid":"badge5", "tooltiptext":"Gained 50 Points", "badgephoto":"badge5.jpg"}]}
-      mongo.db.users.insert(user1)
+      #mongo.db.users.insert(user1)
+      client['savethedata']['xxx'].insert(user1)
     return render_template('profile.html', user1=user1)
     #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
   except pymongo.errors.DuplicateKeyError, e:
     print "NOPE"
- 
+
 
 if __name__ == '__main__':
-  app.debug = True #MUST REMEMBER TO REMOVE LATER
+  #app.debug = True #MUST REMEMBER TO REMOVE LATER
   app.run()
