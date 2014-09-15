@@ -1,18 +1,22 @@
-from flask import Flask
-from flask import render_template
-from flask import request
+from flask import Flask, render_template, request, url_for
 import pymongo
 import sys, os
 import datetime
 from pymongo import MongoClient
 app = Flask(__name__)
 
-#connect to MongoDB with the defaults 
-mongo = PyMongo(app)
+try:
+  client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
+  print "Connected successfully!!!"
+  db=client['savethedata']
+  collection=db['xxx']
+  print "collection established"
+except pymongo.errors.ConnectionFailure, e:
+  print "Could not connect to MongoDB: %s" % e
 
 @app.route('/')
 def index():
-  return url_for('static', filename='index.html') #what are we supposed to return???
+  return render_template('index.html') #what are we supposed to return???
 
 
 @app.route('/u/<user_id>/')
@@ -20,18 +24,19 @@ def profile(user_id=None):
   #shows the profile page for one user
   return render_template('profile.html', user_id=user_id)
 
-@app.route('/u/<user_id>/', method=['POST'])
+@app.route('/u/<user_id>/', methods=['POST'])
 def updateUser(user_id=None):
   user = request.args.get('key', '') #gets username from url 
   user_prof = mongo.db.users.find_one({'_id', user}) 
   if user_prof:
     #update the user
+    pass
   else: 
     #this is an error
     pass 
   return render_template('profile.html', user_id=user_id)
 
-@app.route('/u/<user_id>/', method=['GET'])
+@app.route('/u/<user_id>/', methods=['GET'])
 def getUser(user_id=None):
   try:
     user1 = mongo.db.users.find_one({"_id": user_id})
@@ -49,10 +54,11 @@ def getUser(user_id=None):
       ,{"badgeid":"badge3", "tooltiptext":"Gained Ten Points", "badgephoto":"badge3.jpg"},{"badgeid":"badge4", "tooltiptext":"Gained 25 Points", "badgephoto":"badge4.jpg"},
       {"badgeid":"badge5", "tooltiptext":"Gained 50 Points", "badgephoto":"badge5.jpg"}]}
       mongo.db.users.insert(user1)
+      return render_template('profile.html', user1=user1)
     #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
   except pymongo.errors.DuplicateKeyError, e:
     print "NOPE"
-  return render_template('profile.html', user1=user1)
+ 
 
 
 @app.route('/bye/')
