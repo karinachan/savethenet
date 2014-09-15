@@ -56,11 +56,6 @@ def getUser(user_id=None):
     print "NOPE"
  
 
-
-@app.route('/bye/')
-def logout():
-  return 'Logout Page'
-
 if __name__ == '__main__':
   app.debug = True #MUST REMEMBER TO REMOVE LATER
   app.run()
