@@ -376,17 +376,12 @@
 function upupdateDB(chall_name) {
   var url = location.href.split('/');
 
-  var result = $.ajax({
+  $.ajax({
     type: 'POST',
     url: location.href,
     data: {'name': chall_name}
   });
-  console.log("POSTED.");
-}; 
-  console.log(result)
-  if result['success'] {
-    location.reload();
-  }
+  location.reload();
 </script>
 
 </body>
