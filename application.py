@@ -5,6 +5,8 @@ import datetime
 from pymongo import MongoClient
 app = Flask(__name__)
 
+application = app # For AWS EBS
+
 try:
   client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
   print "Connected successfully!!!"
