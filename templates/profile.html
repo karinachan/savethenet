@@ -94,6 +94,7 @@
     });
   }
 
+
   function updateHuman(response) {
     if (response.status === 'connected') {
       FB.api('/me', function(response) {
@@ -373,11 +374,13 @@
 </div>
 
 <script>
-function upupdateDB(nme) {
+function upupdateDB(name) {
+  var url = location.href.split('/')
+
   $$.ajax({
     type: 'POST',
-    url: '/u/',
-    data: {'chall_name': nme}
+    url: '/u/' + url[url.length -1],
+    data: {'chall_name': name}
   });
   console.log("POSTED.");
 }

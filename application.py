@@ -23,7 +23,7 @@ def index():
 @app.route('/u/<user_id>/', methods=['POST'])
 def updateUser(user_id=None):
   user = request.args.get('key', '') #gets username from url 
-  user_prof = mongo.db.users.find_one({'_id', user}) 
+  user_prof = client['savethedata']['xxx'].find_one({'_id', user}) 
   if user_prof:
     #update the user
     pass
