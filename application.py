@@ -31,8 +31,6 @@ def updateUser(user_id=None):
           'all_challenges.$.status' : 'complete'
         }
       })
-  client['savethedata']['xxx'].update({'_id': user_id},
-      {'$inc': {'pts' : 5}})
   return render_template('profile.html', user1=user1)
 
 @app.route('/u/<user_id>', methods=['GET'])
