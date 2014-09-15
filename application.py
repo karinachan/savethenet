@@ -20,12 +20,6 @@ except pymongo.errors.ConnectionFailure, e:
 def index():
   return render_template('index.html') #what are we supposed to return???
 
-
-@app.route('/u/<user_id>/')
-def profile(user_id=None):
-  #shows the profile page for one user
-  return render_template('profile.html', user_id=user_id)
-
 @app.route('/u/<user_id>/', methods=['POST'])
 def updateUser(user_id=None):
   user = request.args.get('key', '') #gets username from url 
@@ -36,12 +30,12 @@ def updateUser(user_id=None):
   else: 
     #this is an error
     pass 
-  return render_template('profile.html', user_id=user_id)
+  # return render_template('profile.html', user_id=user_id)
 
 @app.route('/u/<user_id>/', methods=['GET'])
 def getUser(user_id=None):
   try:
-    user1 = mongo.db.users.find_one({"_id": user_id})
+    user1 = client['savethedata']['xxx'].find_one({"_id": user_id})
     if not user1: 
       user1 = {"_id": user_id,#facebook userid
       "pts": 0, #sum of your completed challenges
@@ -56,7 +50,7 @@ def getUser(user_id=None):
       ,{"badgeid":"badge3", "tooltiptext":"Gained Ten Points", "badgephoto":"badge3.jpg"},{"badgeid":"badge4", "tooltiptext":"Gained 25 Points", "badgephoto":"badge4.jpg"},
       {"badgeid":"badge5", "tooltiptext":"Gained 50 Points", "badgephoto":"badge5.jpg"}]}
       mongo.db.users.insert(user1)
-      return render_template('profile.html', user1=user1)
+    return render_template('profile.html', user1=user1)
     #client['savethedata']['xxx'].insert({"user_id": user_id}) //when you go to the profile
   except pymongo.errors.DuplicateKeyError, e:
     print "NOPE"
