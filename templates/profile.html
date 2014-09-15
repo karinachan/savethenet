@@ -1,4 +1,3 @@
-$def with (template)
 <html>
 <head>
   <title>Save the Net: I Can Haz Net Neutrality?!</title>
@@ -183,14 +182,17 @@ $def with (template)
   <div id="left-panel" class="content-panel">
     <img id="prof-photo" src="">
     <h3 id="your-name"></h3>
-    <h4 id="points">Points: <span id="numpoints">$post['pts']</span></h4>
+    <h4 id="points">Points: <span id="numpoints">{{ user1['pts'] }}</span></h4>
     <h4>Badges</h4>
     <div id="badges">
-    <img class="badgee" src="/static/images/badge2.jpg">
-    <img class="badgee" src="/static/images/badge3.jpg">
-    <img class="badgee" src="/static/images/badge4.jpg">
-    <img class="badgee" src="/static/images/badge5.jpg">
-  </div>
+      <!-- Style each image and text relative to parent div. Style divs relative to div that acts as collection for badges -->
+      {% for x in user1['badges'] %}
+      <div id="{{ x['badgeid'] }}_div" class="indiv_badge">
+        <img src="../static/images/{{ x['badgephoto'] }}" id="{{ x['badgeid'] }}" class="badgee">
+        <p id="{{ x['badgeid'] }}_cap" class="b_caption">{{ x['tooltiptext'] }}</p>
+      </div>
+    {% endfor %}
+    </div>
 
     <h4>Invite Friends</h4>
     <div class="fb-share-button" data-href="https://savethenet.herokuapp.com"></div>
@@ -198,8 +200,9 @@ $def with (template)
   </div>
   <div id="center-panel" class="content-panel">
     <h3>Take Action</h3>
-    $for p in post['all_challenges']:
-      <div id="div$p['name']" class="challenge-li $p['status']" data-toggle="modal" data-target="#$p['name']">$p['description']</div>
+    {% for x in user1['all_challenges'] %}
+      <div id="div{{ x['name'] }}" class="challenge-li {{ x['status'] }}" data-toggle="modal" data-target="#{{ x['name'] }}">{{ x['description'] }}</div>
+    {% endfor %}
   </div>
   <div id="right-panel" class="content-panel">
     <h3>Learn More</h3>
@@ -373,8 +376,8 @@ $def with (template)
 function upupdateDB(nme) {
   $$.ajax({
     type: 'POST',
-    url: '/complete',
-    data: { 'user_id': FB.getUserID(), 'chall_name': nme}
+    url: '/u/',
+    data: {'chall_name': nme}
   });
   console.log("POSTED.");
 }
