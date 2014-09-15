@@ -374,15 +374,17 @@
 
 <script>
 function upupdateDB(chall_name) {
-  //console.log("FOUND THE METHOD");
   var url = location.href.split('/')
 
   $.ajax({
     type: 'POST',
     url: location.href,
     data: {'name': chall_name}
-  })
-  //location.reload(); 
+  });
+  console.log("POSTED.");
+}
+
+
 </script>
 
 </body>
