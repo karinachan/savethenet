@@ -374,17 +374,19 @@
 
 <script>
 function upupdateDB(chall_name) {
-  var url = location.href.split('/')
+  var url = location.href.split('/');
 
-  $.ajax({
+  var result = $.ajax({
     type: 'POST',
     url: location.href,
     data: {'name': chall_name}
   });
   console.log("POSTED.");
-}
-
-
+}; 
+  console.log(result)
+  if result['success'] {
+    location.reload();
+  }
 </script>
 
 </body>
