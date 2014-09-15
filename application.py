@@ -20,19 +20,20 @@ except pymongo.errors.ConnectionFailure, e:
 def index():
   return render_template('index.html') #what are we supposed to return???
 
-@app.route('/u/<user_id>/', methods=['POST'])
-def updateUser(user_id=None):
-  user = request.args.get('key', '') #gets username from url 
-  user_prof = client['savethedata']['xxx'].find_one({'_id', user}) 
-  if user_prof:
-    #update the user
-    pass
-  else: 
-    #this is an error
-    pass 
-  # return render_template('profile.html', user_id=user_id)
+@app.route('/u/<user_id>', methods=['POST'])
+def updateUser(user_id=None):   
+  client['savethedata']['xxx'].update({
+        '_id': user_id,
+        'all_challenges.name': request.form['name'],
+      },
+      {
+        '$set': {
+          'all_challenges.$.status' : 'complete'
+        }
+      })
+  return {'success': True}
 
-@app.route('/u/<user_id>/', methods=['GET'])
+@app.route('/u/<user_id>', methods=['GET'])
 def getUser(user_id=None):
   try:
     user1 = client['savethedata']['xxx'].find_one({"_id": user_id})
