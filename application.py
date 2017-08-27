@@ -8,7 +8,7 @@ app = Flask(__name__)
 application = app # For AWS EBS
 
 try:
-  client = MongoClient('mongodb://admin:catmin@ds035240.mongolab.com:35240/savethedata')
+  client = MongoClient('mongodb://[ADDRESS]')
   print "Connected successfully!!!"
   db=client['savethedata']
   collection=db['xxx']
